@@ -24,3 +24,10 @@ add the Laravel\Passport\HasApiTokens trait to your App\Models\User model. This 
 
 use Laravel\Passport\HasApiTokens;
 use HasApiTokens
+
+### Call the Passport::routes method
+
+call the Passport::routes method within the boot method of your App\Providers\AuthServiceProvider. This method will register the routes necessary to issue access tokens and revoke access tokens, clients, and personal access tokens:
+
+use Laravel\Passport\Passport;
+Passport::routes();
