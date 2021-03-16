@@ -31,3 +31,11 @@ call the Passport::routes method within the boot method of your App\Providers\Au
 
 use Laravel\Passport\Passport;
 Passport::routes();
+
+### api authentication guard to passport
+in your application's config/auth.php configuration file, you should set the driver option of the api authentication guard to passport. This will instruct your application to use Passport's TokenGuard when authenticating incoming API requests:
+
+ 'api' => [
+        'driver' => 'passport',
+        'provider' => 'users',
+    ],
